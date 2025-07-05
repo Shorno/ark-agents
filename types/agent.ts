@@ -9,4 +9,4 @@ export interface Agent {
 
 
 type Status = "Active" | "Beta" | "Archived"
-type PricingModel = "Subscription" | "Per‑Use" | "Free Tie"
+type PricingModel = "Subscription" | "Per-Use" | "Free Tier"

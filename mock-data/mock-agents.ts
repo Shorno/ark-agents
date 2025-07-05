@@ -1,4 +1,6 @@
-export const agents = [
+import {Agent} from "@/types/agent";
+
+export const agents : Agent[] = [
   {
     "id": "agent-001",
     "name": "Intelligent Chatbot Pro",
