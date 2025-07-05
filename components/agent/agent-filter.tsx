@@ -69,7 +69,7 @@ export default function AgentFilter() {
 
                 <div>
                     <div className="font-medium mb-1 md:mb-2 text-sm md:text-base">Category</div>
-                    <ScrollArea className="h-36">
+                    <ScrollArea className="md:h-36">
                         <div className="flex flex-row md:flex-col gap-2 overflow-x-auto">
                             {categoryOptions.map(category => (
                                 <label key={category} className="flex items-center gap-1 min-w-max">

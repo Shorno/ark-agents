@@ -3,7 +3,6 @@ import Link from "next/link";
 
 const navItems = [
     {label: "Agents", href: "/agents"},
-    {label: "Agents (Dynamic)", href: "/agents-dynamic"},
     {label: "About", href: "/about"}
 ]
 export default function Navbar() {

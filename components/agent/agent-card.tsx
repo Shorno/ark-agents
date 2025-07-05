@@ -72,7 +72,6 @@ export default function AgentCard({agent, index}: AgentCardProps) {
                         </div>
 
                         <div className="flex items-center space-x-1">
-                            {/*<div className={`w-2 h-2 ${statusInfo.color} rounded-full`}/>*/}
                             <StatusIcon className={`h-3 w-3 mr-1 ${statusInfo.text}`} />
                             <span className={`text-xs font-medium ${statusInfo.text}`}>{agent.status}</span>
                         </div>
