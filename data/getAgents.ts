@@ -10,7 +10,6 @@ interface AgentApiResponse {
 
 //for mocking real api
 // const API_URL = process.env.NEXT_PUBLIC_API_URL;
-
 export async function getAgents(): Promise<AgentApiResponse> {
     await new Promise(resolve => setTimeout(resolve, 500));
     // const response = await fetch(`${API_URL}/agents`)
