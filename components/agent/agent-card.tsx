@@ -2,7 +2,7 @@
 
 import type React from "react"
 import {motion} from "motion/react"
-import {Bot, Zap, Star, Sparkles} from "lucide-react"
+import {Bot, Zap, Star, Clock, Archive} from "lucide-react"
 import {Card, CardContent} from "@/components/ui/card"
 import {Badge} from "@/components/ui/badge"
 import type {Agent} from "@/types/agent"
@@ -21,12 +21,12 @@ const statusConfig = {
     Beta: {
         color: "bg-amber-500",
         text: "text-amber-700",
-        icon: Sparkles,
+        icon: Clock,
     },
     Archived: {
         color: "bg-gray-400",
         text: "text-gray-600",
-        icon: Star,
+        icon: Archive,
     },
 }
 
@@ -49,6 +49,7 @@ const pricingStyles = {
 
 export default function AgentCard({agent, index}: AgentCardProps) {
     const statusInfo = statusConfig[agent.status]
+    const StatusIcon = statusInfo.icon
     const categoryColor = categoryColors[agent.category as keyof typeof categoryColors] || "bg-gray-500"
     const pricingStyle = pricingStyles[agent.pricingModel as keyof typeof pricingStyles] || "bg-gray-50 text-gray-700 border-gray-200"
 
@@ -71,7 +72,8 @@ export default function AgentCard({agent, index}: AgentCardProps) {
                         </div>
 
                         <div className="flex items-center space-x-1">
-                            <div className={`w-2 h-2 ${statusInfo.color} rounded-full`}/>
+                            {/*<div className={`w-2 h-2 ${statusInfo.color} rounded-full`}/>*/}
+                            <StatusIcon className={`h-3 w-3 mr-1 ${statusInfo.text}`} />
                             <span className={`text-xs font-medium ${statusInfo.text}`}>{agent.status}</span>
                         </div>
                     </div>

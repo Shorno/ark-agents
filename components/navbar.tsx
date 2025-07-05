@@ -3,11 +3,12 @@ import Link from "next/link";
 
 const navItems = [
     {label: "Agents", href: "/agents"},
+    {label: "Agents (Dynamic)", href: "/agents-dynamic"},
     {label: "About", href: "/about"}
 ]
 export default function Navbar() {
     return (
-        <nav className={"w-full py-2 fixed"}>
+        <nav className={"w-full py-2 fixed z-50"}>
             <div className={"flex justify-between items-center mx-auto max-w-7xl backdrop-blur-sm shadow px-4 py-2  rounded-sm"}>
                 <Link href={"/"} className={"text-xl font-semibold"}>Ark Agents</Link>
                 <ul className={"flex gap-10"}>

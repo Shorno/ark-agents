@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import {NuqsAdapter} from "nuqs/adapters/next/app";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,9 @@ export default function RootLayout({
       >
       <Navbar/>
       <div className={"py-32 bg-gray-50 min-h-screen"}>
-          {children}
+          <NuqsAdapter>
+              {children}
+          </NuqsAdapter>
       </div>
       </body>
     </html>
