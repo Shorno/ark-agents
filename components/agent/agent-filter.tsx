@@ -8,6 +8,9 @@ import { Button } from "@/components/ui/button";
 import { agents } from "@/mock-data/mock-agents";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useAgentFilters } from "@/hooks/useAgentFilters";
+import {useDispatch} from "react-redux";
+import {setAgentFilters} from "@/store/agentSlice";
+import {useEffect} from "react";
 
 const statusOptions = Array.from(new Set(agents.map(agent => agent.status)));
 const categoryOptions = Array.from(new Set(agents.map(agent => agent.category)));
@@ -15,6 +18,11 @@ const pricingModel = Array.from(new Set(agents.map(agent => agent.pricingModel))
 
 export default function AgentFilter() {
     const { filters, setFilters, clearAll } = useAgentFilters();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(setAgentFilters(filters));
+    }, [filters, dispatch]);
 
     return (
         <Card className="w-full px-5 py-4 md:px-8 md:py-6 mb-6 mx-auto rounded-2xl">

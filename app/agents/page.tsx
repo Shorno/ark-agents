@@ -3,9 +3,12 @@ import {Suspense} from "react";
 import AgentGrid from "@/components/agent/agent-grid";
 import AgentGridSkeleton from "@/components/agent/agent-grid-skeleton";
 import AgentFilter from "@/components/agent/agent-filter";
+import {getAgents} from "@/data/getAgents";
 
 
 export default async function AgentPage() {
+    const agents = await getAgents()
+
     return (
         <div className="max-w-6xl mx-auto px-4">
             <div className="text-center mb-12">
@@ -19,7 +22,7 @@ export default async function AgentPage() {
             </div>
             <AgentFilter/>
             <Suspense fallback={<AgentGridSkeleton/>}>
-                <AgentGrid/>
+                <AgentGrid agents={agents}/>
             </Suspense>
         </div>
     )

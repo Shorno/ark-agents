@@ -2,7 +2,7 @@
 import {Agent} from "@/types/agent";
 import {agents} from "@/mock-data/mock-agents";
 
-interface AgentApiResponse {
+export interface AgentApiResponse {
     data: Agent[],
     message: string,
     status: string
