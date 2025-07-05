@@ -1,7 +1,5 @@
 import {Bot} from "lucide-react";
-import AgentGrid from "@/components/agent/agent-grid";
-import {Suspense} from "react";
-import AgentGridSkeleton from "@/components/agent/agent-grid-skeleton";
+
 
 export default async function AgentPage() {
     return (
@@ -15,10 +13,9 @@ export default async function AgentPage() {
                     Discover and deploy intelligent AI agents to automate your business processes
                 </p>
             </div>
-            <Suspense fallback={<AgentGridSkeleton/>}>
-                <AgentGrid/>
-            </Suspense>
-
+            {/*<Suspense fallback={<AgentGridSkeleton/>}>*/}
+            {/*    <AgentGrid/>*/}
+            {/*</Suspense>*/}
         </div>
     )
 }
