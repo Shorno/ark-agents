@@ -4,6 +4,8 @@ import AgentGrid from "@/components/agent/agent-grid";
 import AgentGridSkeleton from "@/components/agent/agent-grid-skeleton";
 
 
+export const dynamic = 'force-dynamic'
+
 export default async function AgentPage() {
     return (
         <div className="max-w-6xl mx-auto px-6">
