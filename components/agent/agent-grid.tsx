@@ -1,5 +1,5 @@
 "use client";
-import {useState, useEffect, useRef} from "react";
+import {useState, useEffect} from "react";
 import AgentCard from "@/components/agent/agent-card";
 import AgentGridSkeleton from "@/components/agent/agent-grid-skeleton";
 import {AgentApiResponse} from "@/data/getAgents";
@@ -26,8 +26,6 @@ export default function AgentGrid({agents}: { agents: AgentApiResponse }) {
     }, [agents, filters]);
 
     const filteredAgents: Agent[] = useSelector(selectFilteredAgents);
-
-    console.log(filteredAgents)
 
     if (loading) {
         return <AgentGridSkeleton/>;

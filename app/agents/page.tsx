@@ -20,7 +20,9 @@ export default async function AgentPage() {
                     Discover and deploy intelligent AI agents to automate your business processes
                 </p>
             </div>
-            <AgentFilter/>
+            <Suspense fallback={<AgentGridSkeleton/>}>
+                <AgentFilter/>
+            </Suspense>
             <Suspense fallback={<AgentGridSkeleton/>}>
                 <AgentGrid agents={agents}/>
             </Suspense>
