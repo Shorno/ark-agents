@@ -97,10 +97,12 @@ export default function Navbar() {
                     </ul>
 
                     <div>
-                        <Button
+                        <Button asChild
                             size="sm"
                         >
-                            Login
+                            <Link href={"/login"}>
+                                Login
+                            </Link>
                         </Button>
                     </div>
                 </div>
