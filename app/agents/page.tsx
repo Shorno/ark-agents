@@ -5,7 +5,12 @@ import AgentGridSkeleton from "@/components/agent/agent-grid-skeleton";
 import AgentFilter from "@/components/agent/agent-filter";
 import {getAgents} from "@/data/getAgents";
 import AgentFilterSkeleton from "@/components/AgentFilterSkeleton";
+import {Metadata} from "next";
 
+
+export const metadata: Metadata = {
+    title: "Agents"
+};
 
 export default async function AgentPage() {
     const agents = await getAgents()
