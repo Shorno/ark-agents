@@ -4,6 +4,7 @@ import AgentGrid from "@/components/agent/agent-grid";
 import AgentGridSkeleton from "@/components/agent/agent-grid-skeleton";
 import AgentFilter from "@/components/agent/agent-filter";
 import {getAgents} from "@/data/getAgents";
+import AgentFilterSkeleton from "@/components/AgentFilterSkeleton";
 
 
 export default async function AgentPage() {
@@ -20,7 +21,7 @@ export default async function AgentPage() {
                     Discover and deploy intelligent AI agents to automate your business processes
                 </p>
             </div>
-            <Suspense fallback={<AgentGridSkeleton/>}>
+            <Suspense fallback={<AgentFilterSkeleton/>}>
                 <AgentFilter/>
             </Suspense>
             <Suspense fallback={<AgentGridSkeleton/>}>

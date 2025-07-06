@@ -11,11 +11,9 @@ export interface AgentFilters {
 interface AgentState {
     allAgents: Agent[];
     filters: AgentFilters;
-    status: 'idle' | 'loading' | 'succeeded' | 'failed';
-
 }
 
-const initialState: AgentState = {
+export const initialState: AgentState = {
     allAgents: [],
     filters: {
         name: "",
@@ -23,7 +21,6 @@ const initialState: AgentState = {
         category: [],
         pricing: "all",
     },
-    status: 'idle',
 };
 
 const agentSlice = createSlice({
@@ -32,16 +29,9 @@ const agentSlice = createSlice({
     reducers: {
         setAllAgents(state, action: PayloadAction<Agent[]>) {
             state.allAgents = action.payload;
-            state.status = 'succeeded';
         },
         setAgentFilters(state, action: PayloadAction<AgentFilters>) {
             state.filters = action.payload;
-        },
-        setLoading(state) {
-            state.status = 'loading';
-        },
-        setIdle(state) {
-            state.status = 'idle';
         },
     },
 });
