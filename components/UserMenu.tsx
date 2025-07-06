@@ -13,9 +13,11 @@ import {
 } from "@/components/ui/dropdown-menu"
 import {signOut, useSession} from "@/lib/auth-client";
 import {Skeleton} from "@/components/ui/skeleton";
+import {useRouter} from "next/navigation";
 
 export default function UserMenu() {
     const {data, isPending} = useSession();
+    const router = useRouter()
 
     if (isPending) {
         return <Skeleton className="h-10 w-10 rounded-full"/>
@@ -30,7 +32,10 @@ export default function UserMenu() {
     }
 
     const handleLogout = async () => {
-        await signOut()
+        const result = await signOut()
+        if (result?.data?.success) {
+            router.push("/")
+        }
     };
 
     return (

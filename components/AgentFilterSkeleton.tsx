@@ -1,4 +1,3 @@
-"use client";
 import { Card } from "@/components/ui/card";
 import { Funnel } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
