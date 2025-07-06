@@ -31,7 +31,7 @@ export default function RootLayout({
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
         <Navbar/>
-        <div className={"py-32 bg-gray-50 min-h-screen"}>
+        <div className={"bg-gray-50 min-h-screen"}>
             <StoreProvider>
                 <NuqsAdapter>
                     {children}

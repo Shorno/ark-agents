@@ -3,14 +3,17 @@
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {motion, useScroll, useTransform} from "motion/react";
+import {usePathname} from "next/navigation";
 
 const navItems = [
     {label: "Agents", href: "/agents"},
-    {label: "About", href: "/about"}
 ];
 
 export default function Navbar() {
     const {scrollY} = useScroll();
+
+    const pathname = usePathname()
+    const activePath = pathname === "/agents"
 
     const navbarPadding = useTransform(scrollY, [0, 100], ["1rem", "0.5rem"]);
     const navbarMargin = useTransform(scrollY, [0, 100], ["0rem", "1rem"]);
@@ -71,7 +74,7 @@ export default function Navbar() {
                 <div className="flex px-4 justify-between items-center relative z-10">
                     <Link
                         href="/"
-                        className="text-xl font-semibold  transition-all duration-300"
+                        className={`text-xl font-semibold`}
                     >
                         Ark Agents
                     </Link>
@@ -81,8 +84,11 @@ export default function Navbar() {
                             <li key={nav.href}
                             >
                                 <Link
+
                                     href={nav.href}
-                                    className="font-medium"
+                                    className={`font-medium px-3 py-1 rounded-md transition-colors duration-200 ${activePath
+                                        ? "bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-md"
+                                        : "hover:bg-gray-100 hover:text-blue-600"}`}
                                 >
                                     {nav.label}
                                 </Link>

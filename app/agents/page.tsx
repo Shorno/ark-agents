@@ -11,7 +11,7 @@ export default async function AgentPage() {
     const agents = await getAgents()
 
     return (
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-6xl mx-auto px-4 py-32">
             <div className="text-center mb-12">
                 <div className="flex items-center justify-center space-x-2 mb-4">
                     <Bot className="w-8 h-8 text-blue-600"/>
