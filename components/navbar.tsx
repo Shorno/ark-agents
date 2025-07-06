@@ -1,17 +1,17 @@
 "use client";
-
-import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {motion, useScroll, useTransform} from "motion/react";
 import {usePathname} from "next/navigation";
+import UserMenu from "@/components/UserMenu";
 
 const navItems = [
     {label: "Agents", href: "/agents"},
 ];
 
+
+
 export default function Navbar() {
     const {scrollY} = useScroll();
-
     const pathname = usePathname()
     const activePath = pathname === "/agents"
 
@@ -95,16 +95,7 @@ export default function Navbar() {
                             </li>
                         ))}
                     </ul>
-
-                    <div>
-                        <Button asChild
-                            size="sm"
-                        >
-                            <Link href={"/login"}>
-                                Login
-                            </Link>
-                        </Button>
-                    </div>
+                    <UserMenu/>
                 </div>
             </motion.div>
         </motion.nav>

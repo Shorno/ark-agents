@@ -3,11 +3,11 @@
 import {motion} from "motion/react"
 import {ArrowLeft} from "lucide-react"
 import Link from "next/link"
-import {signIn} from "@/lib/auth-client";
+import {signInWithGoogle} from "@/lib/auth-client";
 
 export default function SignInPage() {
     const handleGoogleSignIn = async () => {
-       const response =  await signIn()
+       const response =  await signInWithGoogle()
         console.log(response)
     }
 
